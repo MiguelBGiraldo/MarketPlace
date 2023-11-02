@@ -5,11 +5,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <h2>categorias</h2>
   <div *ngFor="let item of categorias" class="contenedor">
-    <p class="btn btn-outline-primary button" (click)="listarPorCategoria(item)" type="submit">{{ item }}</p>
+    <button class="" (click)="listarPorCategoria(item)">{{item}}</button>
+    <!-- <p class="btn btn-outline-primary button" (click)="listarPorCategoria(item)" type="submit">{{ item }}</p> -->
   </div>
 
   <div class="contenedor">
-    <p class="btn btn-outline-primary" (click)="listarAll()" type="submit">todos</p>
+    <p class="" (click)="listarAll()" type="submit">todos</p>
     </div>
   <div class="container">
     <div class="row">

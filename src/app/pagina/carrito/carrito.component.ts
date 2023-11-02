@@ -143,7 +143,7 @@ export class CarritoComponent {
       valoracion.codigoEvaluado = item.productos.codigoVendedor;
       valoracion.codigoValorado = this.transaccion.codigoUsuario;
     
-      this.valoracionService.ponerValoracion(valoracion);
+      this.ejecturarValoracion(valoracion);
     });
 
     this.transaccion.detalleCompra = this.productosDetalle;
@@ -152,6 +152,18 @@ export class CarritoComponent {
 
     this.ejecutarCompra();
 
+  }
+
+  public ejecturarValoracion(valoracion: ValoracionDTO){
+
+    this.valoracionService.ponerValoracion(valoracion).subscribe({
+      next: data => {
+        this.alerta = new Alerta(data.respuesta,"succes");
+      },
+      error: error => {
+        this.alerta = new Alerta(error.error.respuesta,"danger");
+      }
+    });
   }
 
   public ejecutarCompra(){

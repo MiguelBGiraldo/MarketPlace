@@ -9,7 +9,7 @@ import { ValoracionDTO } from '../modelo/valoracion-dto';
 export class ValoracionService {
 
   valoracion: number = 0;
-  private valoracionURL = 'http://localhost:8080/valoracion';
+  private valoracionURL = 'http://localhost:8080/api/valoracion';
 
   constructor(private http: HttpClient) {
 
